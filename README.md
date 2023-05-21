@@ -1,2 +1,0 @@
-# theoptimism
-the optimism app
