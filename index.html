@@ -7,82 +7,28 @@
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-            background-color: #b6dfe2;
             padding: 10px;
-            background-image: url("brain.ppng");
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
             margin: 0;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        img {
-        max-width: 100%;
-        max-height: 100%;
+            justify-content: flex-start;
+            align-items: flex-start;
+            min-height: 100vh;
         }
 
         .hidden {
             display: none;
         }
 
-        h1 {
-
-
-			text-align: right;
-
-            font-size: 4rem;
-            font-family: 'Arial', sans-serif;
-            font-weight: bold;
-            color: #333;
-		}
-
-        h2 {
-			font-size: 36px;
-			font-weight: bold;
-			margin-top: 0;
-			text-align: right;
-			background: -webkit-linear-gradient(left, #ea6309, #1abaff, #e60f03, #ff4dff, #06e63a, #9406f3);
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-			padding: 10px;
-			line-height: 1.2;
-			margin-bottom: 10px;
-		}
-
-		p {
-			font-size: 28px;
-			font-weight: bold;
-			margin-top: 0;
-			margin-bottom: 10px;
-			text-align: left;
-			background: -webkit-linear-gradient(left, #9110ed, #07e22b, #ff33ff, #ff4d4d, #18c2d1, #db4f0f);
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-			padding: 10px;
-			line-height: 1.2;
-		}
-
-		h3 {
-			font-size: 22px;
-			margin-top: 0;
-			margin-bottom: 10px;
-			text-align: center;
-			line-height: 1.2;
-		}
-
         /* Add these new rules for input elements */
         textarea {
-            width: 25%;
-            min-height: 50px;
+            width: 65%;
+            min-height: 30px;
             padding: 10px;
             border: none;
-            border-radius: 10px;
+            border-radius: 5px;
             font-size: 16px;
-            margin-bottom: 10px;
+            margin-top: 5px;
+            margin-bottom: 5px;
             box-shadow: inset 0 0 5px #ccc;
             display: flex;
             justify-content: center;
@@ -90,7 +36,7 @@
         }
 
         button {
-            background-color: #007AFF;
+            background-color: #ff5500;
             border: none;
             color: white;
             padding: 10px 20px;
@@ -119,46 +65,6 @@
         align-items: center;
         }
 
-        #contact {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        }
-
-        .popup {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.4);
-        }
-
-        .popup-content {
-            background-color: #fefefe;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 50%;
-        }
-
-        .close-btn {
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close-btn:hover,
-        .close-btn:focus {
-            color: #000;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-
         /* Responsive styles */
         @media only screen and (max-width: 600px) {
             body {
@@ -169,73 +75,64 @@
                 width: 100%;
             }
         }
-    </style>
 
+        progress[value] {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            width: 50%;
+            height: 20px;
+        }
+
+        progress[value]::-webkit-progress-bar {
+            background-color: #f3f3f3;
+            border-radius: 2px;
+        }
+
+        progress[value]::-webkit-progress-value {
+            background-color: #4caf50;
+            border-radius: 2px;
+        }
+
+        progress[value]::-moz-progress-bar {
+            background-color: #4caf50;
+            border-radius: 2px;
+        }
+    </style>
 </head>
+
+
 <body>
-    <div id="contact">
-        <button id="aboutBtn">About Us</button>
-    </div>
-    
-    <div id="aboutPopup" class="popup">
-        <div class="popup-content">
-            <span class="close-btn">&times;</span>
-            <h1>About Our Organization</h1>
-            <p>We are a non-profit organization dedicated to promoting optimism and positivity in the world.</p>
-            <h4>Our Mission</h4>
-            <p>Our mission is to help people develop a more optimistic outlook on life by providing tools, resources, and support.</p>
-            <h4>Our Goals</h4>
-            <ul>
-                <li>To create a community of people who support and encourage each other to be more optimistic.</li>
-                <li>To provide resources and tools to help people develop a more positive mindset.</li>
-                <li>To raise awareness about the benefits of optimism and positivity.</li>
-            </ul>
-        </div>
-    </div>
-    
     <div id="main">
-        <h1>Hey there, 🙂</h1>
-        <!--<p>Thanks for choosing to infuse your life with a little extra optimism.</p> -->
-        <!--<p><small>We're thrilled to be on this journey of positivity and growth with you.</small></p> -->
         <div id="progressBarContainer">
             <progress id="progressBar" max="100" value="20"></progress>
             <h3>Your progress for today 🙂 </h3>
             <button id="startBtn">Start the test</button>
         </div>
-        <div>
-            <h1> </h1>
-            <h1> </h1>
-            <h1> </h1>
-            <h1> </h1>
-            <h1> </h1>
-            <h1> </h1>
-            <p><small>You know what, </small></p>
-            <p><small>just by opening this page, </small></p>
-            <p><small>you're already on your way to success! </small></p>
-            <p><small>It shows that you're taking a step towards your goal and that's a victory in itself. Keep up the positivity! </small></p>
-        </div>
     </div>
     <div id="question1" class="hidden">
         <div style="display: flex; flex-direction: column; align-items: center;">
-            <h2>How are you doing? What good things happened to you today?</h2>
-            <textarea id="answer1" placeholder="Type your answer here"></textarea>
+            <h4 style="margin-bottom: 3px;">What one or several events today contributed to your success or helped you avoid negative consequences?</h4>
+            <textarea id="answer1" placeholder="Please describe the situation."></textarea>
             <button id="nextBtn1">Next</button>
         </div>
     </div>
     <div id="question2" class="hidden">
         <div style="display: flex; flex-direction: column; align-items: center;">
-            <h2>Question 2: (Customize the question here)</h2>
+            <h4 style="margin-bottom: 3px;">What positive aspects can you highlight in this situation? Why is this meaningful to you?</h4>
             <textarea id="answer2" placeholder="Type your answer here"></textarea>
             <button id="nextBtn2">Next</button>
         </div>
     </div>
     <div id="question3" class="hidden">
         <div style="display: flex; flex-direction: column; align-items: center;">
-            <h2>Question 3: (Customize the question here)</h2>
+            <h4 style="margin-bottom: 3px;">What could have happened if you weren't lucky in this situation? What consequences could this have had on your day?</h4>
             <textarea id="answer3" placeholder="Type your answer here"></textarea>
             <button id="nextBtn3">Next</button>
         </div>
     </div>
+
+    
     <script>
         function showElement(elementId) {
             document.getElementById(elementId).classList.remove("hidden");
@@ -248,7 +145,56 @@
         function increaseProgress(points) {
             const progressBar = document.getElementById("progressBar");
             progressBar.value = Math.min(100, progressBar.value + points);
+            updateProgressBarColor();
+
+            // Save progress and timestamp to localStorage
+            localStorage.setItem("progress", progressBar.value);
+            localStorage.setItem("lastSaved", Date.now());
         }
+
+
+        function isNextDay(lastSavedTimestamp) {
+            const lastSavedDate = new Date(lastSavedTimestamp);
+            const currentDate = new Date();
+
+            return (
+                currentDate.getDate() !== lastSavedDate.getDate() ||
+                currentDate.getMonth() !== lastSavedDate.getMonth() ||
+                currentDate.getFullYear() !== lastSavedDate.getFullYear()
+            );
+        }
+
+        function restoreProgress() {
+            const progressBar = document.getElementById("progressBar");
+            const progress = localStorage.getItem("progress");
+            const lastSaved = localStorage.getItem("lastSaved");
+
+            if (progress && lastSaved) {
+                if (isNextDay(parseInt(lastSaved))) {
+                    // Reset progress if it's a new day
+                    progressBar.value = 0;
+                    localStorage.setItem("progress", 0);
+                } else {
+                    progressBar.value = parseInt(progress);
+                }
+
+                updateProgressBarColor();
+            }
+        }
+
+        function updateProgressBarColor() {
+            const progressBar = document.getElementById("progressBar");
+            const value = progressBar.value;
+
+            if (value <= 20) {
+                progressBar.style.background = "yellow";
+            } else if (value <= 60) {
+                progressBar.style.background = `linear-gradient(90deg, yellow ${20 / progressBar.max * 100}%, blue 0%)`;
+            } else {
+                progressBar.style.background = `linear-gradient(90deg, yellow ${20 / progressBar.max * 100}%, blue ${(60 - 20) / progressBar.max * 100}%, yellow 0%)`;
+            }
+        }
+
 
         function clearInputFields() {
             document.getElementById("answer1").value = "";
@@ -291,24 +237,9 @@
             handleTestCompletion(points);
         });
 
-        const aboutBtn = document.getElementById("aboutBtn");
-        const aboutPopup = document.getElementById("aboutPopup");
-        const closeBtn = aboutPopup.getElementsByClassName("close-btn")[0];
-
-        aboutBtn.addEventListener("click", function() {
-            aboutPopup.style.display = "block";
+        document.addEventListener("DOMContentLoaded", function () {
+            restoreProgress();
         });
-
-        closeBtn.addEventListener("click", function() {
-            aboutPopup.style.display = "none";
-        });
-
-        window.addEventListener("click", function(event) {
-            if (event.target == aboutPopup) {
-                aboutPopup.style.display = "none";
-            }
-        });
-        
     </script>
 </body>
 </html>
